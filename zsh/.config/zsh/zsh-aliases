@@ -1,0 +1,13 @@
+#!/bin/sh
+# alias j='z'
+# alias f='zi'
+# alias g='lazygit'
+# alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+# alias nvimrc='nvim ~/.config/nvim/'
+alias zshrc='nvim ~/.config/zsh/.zshrc'
+alias zshdir='cd ~/.config/zsh'
+alias reload="echo 'Reloading .zshrc...' && source '$ZDOTDIR/.zshrc'"
+alias oneline="git log --oneline"
+alias ngrok='function _ngrok(){ ~/bin/ngrok $1 $2 $3; };_ngrok'
+alias front_catalogo_dir="cd ~/Workspace/Gobierno\ de\ datos\ UC/Catalog_UC_Front/"
+alias back_catalogo_dir="cd ~/Workspace/Gobierno\ de\ datos\ UC/Catalog_UC_Back_GraphQL/"

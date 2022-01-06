@@ -1,0 +1,6 @@
+fpath=($fpath "/home/lucas/.config/zsh/.zfunctions")
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+export SPACESHIP_VI_MODE_SHOW=false
