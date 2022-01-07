@@ -16,6 +16,10 @@ setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately aft
 setopt EXTENDED_HISTORY  # record command start time
 # setopt appendhistory
 
+# Allow script files in ~/.bash folder to be executed as commands
+export set PATH=$PATH:~/.bash
+export set PATH=$PATH:~/.bin
+
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
@@ -24,7 +28,6 @@ zle_highlight=('paste:none')
 
 # beeping is annoying
 unsetopt BEEP
-
 
 # completions
 autoload -Uz compinit
