@@ -31,6 +31,7 @@ unsetopt BEEP
 
 # completions
 autoload -Uz compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' # case insensitive autocompletion
 zstyle ':completion:*' menu select
 # zstyle ':completion::complete:lsof:*' menu yes select
 zmodload zsh/complist
