@@ -5,6 +5,8 @@
 # alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 # alias nvimrc='nvim ~/.config/nvim/'
 alias zshrc='nvim ~/.config/zsh/.zshrc'
+alias open_aliases='nvim ~/.config/zsh/zsh-aliases'
+alias vimrc='nvim ~/.config/nvim/init.vim'
 alias zshdir='cd ~/.config/zsh'
 alias reload="echo 'Reloading .zshrc...' && source '$ZDOTDIR/.zshrc'"
 alias oneline="git log --oneline"
