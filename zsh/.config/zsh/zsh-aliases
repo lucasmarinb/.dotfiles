@@ -13,5 +13,6 @@ alias oneline="git log --oneline"
 alias ngrok='function _ngrok(){ ~/bin/ngrok $1 $2 $3; };_ngrok'
 alias front_catalogo_dir="cd ~/Workspace/Gobierno\ de\ datos\ UC/Catalog_UC_Front/"
 alias back_catalogo_dir="cd ~/Workspace/Gobierno\ de\ datos\ UC/Catalog_UC_Back_GraphQL/"
+alias labnettings="cd ~/Workspace/Labnettings/labnettings_rails"
 alias ls="exa -lha --git"
 alias cat="batcat"
