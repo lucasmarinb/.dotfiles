@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# export ZDOTDIR=$HOME/.config/zsh # tengo esta opción en .profile
-
 # ========== HISTORY ==========
 # Reference: https://jdhao.github.io/2021/03/24/zsh_history_setup/
 # the detailed meaning of the below three variable can be found in `man zshparam`.
@@ -64,6 +62,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 # More completions https://github.com/zsh-users/zsh-completions
 
 # Key-bindings
+# Recordar que: ^ = CTRL
 bindkey -s '^o' 'ranger^M'
 bindkey -s '^f' 'zi^M'
 bindkey -s '^s' 'ncdu^M'
