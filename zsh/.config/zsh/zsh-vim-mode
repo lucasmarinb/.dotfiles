@@ -8,7 +8,7 @@ bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
 bindkey -M menuselect '^[[Z' vi-up-line-or-history
-bindkey -v '^?' backward-delete-char
+bindkey -v '^?' backward-delete-char # https://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode/533685#533685
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
