@@ -42,6 +42,8 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
+  use "sainnhe/sonokai" -- Have packer manage itself
+  use "Mofiqul/vscode.nvim" -- Have packer manage itself
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

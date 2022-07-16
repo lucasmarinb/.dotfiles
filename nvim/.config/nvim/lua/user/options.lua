@@ -8,6 +8,7 @@ local options = {
 				shiftwidth = 2,                          -- ammount of spaces inserted with commands in normal mode
 				expandtab = true,                        -- causes spaces to be used instead of tabs
 				smartindent = true,                      -- intelligently add indentation depending on where the cursor is
+        termguicolors = true,                    -- expand the color options
 }
 
 for k, v in pairs(options) do
