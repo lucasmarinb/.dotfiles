@@ -9,7 +9,7 @@ if not snip_status_ok then
 end
 
 local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-if not snip_status_ok then
+if not lspkind_status_ok then
   return
 end
 
@@ -75,12 +75,12 @@ cmp.setup {
     }),
   },
   sources = {
-    { name = "nvim_lsp", group_index = 2 },
-    { name = "nvim_lua", group_index = 2 },
-    { name = "luasnip", group_index = 2 },
-    { name = "buffer", group_index = 2 },
-    { name = "path", group_index = 2 },
-    { name = "emoji", group_index = 2 },
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+    { name = "emoji" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
