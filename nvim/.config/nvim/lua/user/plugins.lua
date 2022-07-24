@@ -46,6 +46,25 @@ return packer.startup(function(use)
   use "Mofiqul/vscode.nvim"
   use "tanvirtin/monokai.nvim"
 
+
+  -- cmp plugins
+  use "hrsh7th/nvim-cmp" -- The completion engine plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp" -- nvim-cmp source for neovim's built-in language server client
+  use "hrsh7th/cmp-nvim-lua" -- nvim-cmp source for neovim Lua api
+
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP (LSP is integrated in nvim, this just enables an easy way to config)
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "b0o/SchemaStore.nvim" -- repo of document schemas like package.json
+  use "onsails/lspkind.nvim"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip" --snippet engine
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
