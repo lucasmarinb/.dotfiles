@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -27,7 +27,7 @@ function _G.ReloadConfig()
   dofile(vim.env.MYVIMRC)
 end
 
-keymap("n", "<leader>e", ":Lex 30<CR>", opts)
+keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>p", '"_dP', opts) -- paste into null register to avoid to avoid messing other yanked elements
 keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>so", '<Cmd>lua ReloadConfig()<CR>', { noremap = true })

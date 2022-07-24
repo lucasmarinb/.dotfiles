@@ -71,6 +71,10 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use "p00f/nvim-ts-rainbow"
 
+  -- NvimTree
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
+
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
 
