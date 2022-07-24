@@ -85,9 +85,9 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]] -- Al parecer esto se usa en el keymap <M-f>
   vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-  vim.keymap.set("n", "<M-f>", "<cmd>Format<cr>", opts)
+  vim.keymap.set("n", "<M-f>", "<cmd>Format<cr>", opts) -- Esto no funciona en lua por lo menos
   vim.keymap.set("n", "<M-a>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
   -- vim.keymap.set("n", "<M-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
   vim.keymap.set("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
