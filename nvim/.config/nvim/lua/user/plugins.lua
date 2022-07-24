@@ -42,10 +42,14 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
+
+  -- Colorschemes
   use "sainnhe/sonokai"
   use "Mofiqul/vscode.nvim"
   use "tanvirtin/monokai.nvim"
-
+  use "ellisonleao/gruvbox.nvim"
+  use 'folke/tokyonight.nvim'
+  use "Mofiqul/dracula.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion engine plugin
