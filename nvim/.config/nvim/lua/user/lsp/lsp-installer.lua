@@ -4,24 +4,16 @@ if not status_ok then
 end
 
 local servers = {
---  "cssls",
---  "cssmodules_ls",
---  "emmet_ls",
---  "html",
---  "jdtls",
+  "cssls",
+  "cssmodules_ls",
+  "emmet_ls",
+  "html",
   "jsonls",
---  "solc",
   "sumneko_lua",
---  "tflint",
---  "terraformls",
---  "tsserver",
---  "pyright",
---  "yamlls",
---  "bashls",
---  "clangd",
---  "rust_analyzer",
---  "taplo",
---  "zk@v0.10.1",
+  "tsserver",
+  "pyright",
+  "yamlls",
+  "bashls",
 }
 
 local settings = {
