@@ -16,6 +16,7 @@ vim.g.maplocalleader = ","
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- acá tengo que revisar como se hace lo mismo con librería plenary, una referencia son las dotfiles de teej
 function _G.ReloadConfig()
   for name,_ in pairs(package.loaded) do
     if name:match('^user') then
@@ -27,9 +28,9 @@ function _G.ReloadConfig()
 end
 
 keymap("n", "<leader>e", ":Lex 30<CR>", opts)
+keymap("n", "<leader>p", '"_dP', opts)
 keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>so", '<Cmd>lua ReloadConfig()<CR>', { noremap = true })
-
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
