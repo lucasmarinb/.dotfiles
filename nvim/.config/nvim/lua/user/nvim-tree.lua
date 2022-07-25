@@ -9,6 +9,7 @@
 -- * d: delete
 -- * x: cut
 -- * c: copy
+-- * p: paste
 -- * P: parent node
 -- * W: collapse all
 -- * I: toggle git ignored files

@@ -40,7 +40,6 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
 
   -- Colorschemes
@@ -65,6 +64,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "b0o/SchemaStore.nvim" -- repo of document schemas like package.json
   use "onsails/lspkind.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ':TSUpdate' }
@@ -80,6 +80,9 @@ return packer.startup(function(use)
 
   -- Colors
   use "NvChad/nvim-colorizer.lua"
+
+  -- Uncategorized
+  use "nvim-lua/plenary.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
