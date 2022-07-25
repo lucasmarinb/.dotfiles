@@ -1,6 +1,11 @@
 -- ===== RTFM =====
 -- :h key-notation
 
+-- ===== NOTES =====
+-- <C-f>: Edit command in comand line
+-- :h cmdline-editing - To see how navigate the vim command line
+-- For regex searches, every special operator has to be scaped, which is the opposite to normal regex, where the characters are scaped and not the operators. 
+
 local opts = { noremap = true, silent = true }
 
 -- local term_opts = { silent = true }
@@ -36,6 +41,11 @@ keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
 keymap("n", "<leader>so", '<Cmd>lua ReloadConfig()<CR>', { noremap = true })
+-- Telescope
+keymap("n", "ff", "<Cmd>lua require('telescope.builtin').find_files()<CR>", opts)
+keymap("n", "fg", "<Cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
+keymap("n", "fb", "<Cmd>lua require('telescope.builtin').buffers()<CR>", opts)
+keymap("n", "fh", "<Cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
