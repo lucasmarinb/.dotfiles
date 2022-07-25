@@ -28,10 +28,14 @@ configs.setup {
   },
   indent = { enable = true, disable = { "python", "css", "rust" } },
   -- treesitter plugins
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
   rainbow = {
     enable = true,
     disable = { "html" },
-    -- It allows up to 7 colors, put one more and break the program
+    -- It allows up to 7 colors, put one more and break the plugin
     colors = {
       -- d3.schemePastel1
       -- "#fbb4ae",

@@ -80,10 +80,14 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
-  use("nvim-telescope/telescope-fzf-native.nvim")
+	use("nvim-telescope/telescope-fzf-native.nvim")
 
 	-- Colors
 	use("NvChad/nvim-colorizer.lua")
+
+	-- Comments
+	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Uncategorized
 	use("nvim-lua/plenary.nvim")
