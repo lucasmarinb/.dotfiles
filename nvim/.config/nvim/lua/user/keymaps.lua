@@ -1,3 +1,6 @@
+-- ===== RTFM =====
+-- :h key-notation
+
 local opts = { noremap = true, silent = true }
 
 -- local term_opts = { silent = true }
@@ -30,6 +33,8 @@ end
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>p", '"_dP', opts) -- paste into null register to avoid to avoid messing other yanked elements
 keymap("n", "<leader>y", '"+y', opts)
+keymap("n", "<leader>o", "o<Esc>", opts)
+keymap("n", "<leader>O", "O<Esc>", opts)
 keymap("n", "<leader>so", '<Cmd>lua ReloadConfig()<CR>', { noremap = true })
 
 -- Resize with arrows
