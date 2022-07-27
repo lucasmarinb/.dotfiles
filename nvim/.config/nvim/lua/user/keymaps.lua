@@ -43,7 +43,7 @@ keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
 keymap("n", "<leader>/", "<Cmd>:set hls<CR>", opts)
 keymap("n", "<leader>?", "<Cmd>:nohls<CR>", opts)
-keymap("n", "<leader>so", "<Cmd>lua ReloadConfig()<CR>", { noremap = true })
+-- keymap("n", "<leader>so", "<Cmd>lua ReloadConfig()<CR>", { noremap = true })
 
 -- Telescope
 keymap("n", "<leader>ff", "<Cmd>lua require('telescope.builtin').find_files()<CR>", opts)

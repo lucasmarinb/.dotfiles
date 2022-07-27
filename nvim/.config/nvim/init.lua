@@ -13,4 +13,4 @@ require("user.neogit")
 require("user.gitsigns")
 require("user.cmp")
 require("user.autopairs")
-
+require("user.lualine")
