@@ -40,8 +40,8 @@ keymap("n", "<leader>p", '"_dP', opts) -- paste into null register to avoid to a
 keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
-keymap("n", "<leader>H", "<Cmd>:set hls<CR>", opts)
-keymap("n", "<leader>h", "<Cmd>:nohls<CR>", opts)
+keymap("n", "<leader>/", "<Cmd>:set hls<CR>", opts)
+keymap("n", "<leader>?", "<Cmd>:nohls<CR>", opts)
 keymap("n", "<leader>so", "<Cmd>lua ReloadConfig()<CR>", { noremap = true })
 
 -- Telescope
@@ -56,7 +56,7 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Visual --
+-- ===== Visual =====
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
