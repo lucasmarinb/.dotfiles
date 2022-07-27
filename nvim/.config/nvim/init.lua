@@ -10,3 +10,5 @@ require("user.null-ls")
 require("user.telescope")
 require("user.comment")
 require("user.neogit")
+require("user.cmp")
+

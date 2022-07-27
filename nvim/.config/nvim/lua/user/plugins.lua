@@ -65,10 +65,10 @@ return packer.startup(function(use)
 	use("b0o/SchemaStore.nvim") -- repo of document schemas like package.json
 	use("onsails/lspkind.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("jose-elias-alvarez/typescript.nvim")
 
 	-- Treesitter
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("p00f/nvim-ts-rainbow")
 
 	-- snippets

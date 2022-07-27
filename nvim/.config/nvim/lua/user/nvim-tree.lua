@@ -38,7 +38,7 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   filters = {
-    custom = { ".git" },
+    -- custom = { ".git" },
   },
   sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
   view = {
