@@ -12,4 +12,5 @@ require("user.comment")
 require("user.neogit")
 require("user.gitsigns")
 require("user.cmp")
+require("user.autopairs")
 

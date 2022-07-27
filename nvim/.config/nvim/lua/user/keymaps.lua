@@ -5,6 +5,7 @@
 -- <C-f>: Edit command in comand line
 -- :h cmdline-editing - To see how navigate the vim command line
 -- For regex searches, every special operator has to be scaped, which is the opposite to normal regex, where the characters are scaped and not the operators.
+-- :echo ft - Echoes the file type of the current buffer
 
 local opts = { noremap = true, silent = true }
 
@@ -31,8 +32,8 @@ function _G.ReloadConfig()
 			package.loaded[name] = nil
 		end
 	end
-	print("Sourced init.lua")
 	dofile(vim.env.MYVIMRC)
+	print("Sourced init.lua")
 end
 
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
