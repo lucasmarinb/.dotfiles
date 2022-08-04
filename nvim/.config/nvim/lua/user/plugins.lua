@@ -96,7 +96,7 @@ return packer.startup(function(use)
 
 	-- Uncategorized
 	use("nvim-lua/plenary.nvim")
-  use("nvim-lualine/lualine.nvim")
+	use("ThePrimeagen/harpoon")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
