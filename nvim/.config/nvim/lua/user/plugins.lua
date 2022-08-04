@@ -96,6 +96,14 @@ return packer.startup(function(use)
 
 	-- Uncategorized
 	use("nvim-lua/plenary.nvim")
+	use({
+		"kylechui/nvim-surround",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	})
 	use("ThePrimeagen/harpoon")
 
 	-- Automatically set up your configuration after cloning packer.nvim
