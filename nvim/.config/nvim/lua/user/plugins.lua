@@ -58,6 +58,7 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in language server client
 	use("hrsh7th/cmp-nvim-lua") -- nvim-cmp source for neovim Lua api
+	use("hrsh7th/cmp-emoji")
 
 	-- LSP
 	use("neovim/nvim-lspconfig") -- enable LSP (LSP is integrated in nvim, this just enables an easy way to config)
@@ -96,6 +97,7 @@ return packer.startup(function(use)
 
 	-- Uncategorized
 	use("nvim-lua/plenary.nvim")
+	use("nvim-lualine/lualine.nvim")
 	use({
 		"kylechui/nvim-surround",
 		config = function()
