@@ -43,13 +43,24 @@ local function lsp_keymaps(bufnr)
 	vim.keymap.set("n", "<leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.keymap.set("n", "<leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	vim.keymap.set("n", "<leader>f", "<Cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	-- vim.keymap.set("n", "[d", '<Cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	-- vim.keymap.set("n", "]d", '<Cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+	vim.keymap.set("n", "[d", '<Cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+	vim.keymap.set("n", "]d", '<Cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	-- vim.keymap.set("n", "<leader>q", "<Cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+end
+
+local lsp_formatting = function(bufnr)
+    vim.lsp.buf.format({
+        filter = function(client)
+            -- apply whatever logic you want (in this example, we'll only use null-ls)
+            return client.name == "null-ls"
+        end,
+        bufnr = bufnr,
+    })
 end
 
 local on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
+	lsp_formatting(bufnr)
 	lsp_highlight_document(client, bufnr)
 end
 
