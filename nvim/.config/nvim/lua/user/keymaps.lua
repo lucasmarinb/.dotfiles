@@ -53,8 +53,8 @@ function _G.toggleHls()
 end
 
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>p", '"_dP', opts) -- paste into null register to avoid to avoid messing other yanked elements
-keymap("n", "<leader>y", '"+y', opts)
+keymap("n", "y", '"+y', opts)
+keymap("n", "d", '"+d', opts)
 keymap("n", "<leader>o", "o<Esc>", opts)
 keymap("n", "<leader>O", "O<Esc>", opts)
 keymap("n", "<C-l>", "<Cmd>lua toggleHls()<CR>", opts)
@@ -91,6 +91,7 @@ keymap("n", "<leader>3", "<Cmd>lua require(\"harpoon.ui\").nav_file(3)<CR>", opt
 keymap("n", "<leader>4", "<Cmd>lua require(\"harpoon.ui\").nav_file(4)<CR>", opts)
 
 -- ===== Visual =====
+keymap("v", "p", '"_dP', opts) -- paste into null register to avoid to avoid messing other yanked elements
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
