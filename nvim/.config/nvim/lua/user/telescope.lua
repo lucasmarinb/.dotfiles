@@ -16,4 +16,6 @@
 -- <C-q>: Send all not filtered items to quickfixlist
 -- <M-q>: Send all selected items to quickfixlist
 
-require("telescope").setup({})
+require("telescope").setup({
+	defaults = { file_ignore_patterns = { "node_modules" } },
+})
