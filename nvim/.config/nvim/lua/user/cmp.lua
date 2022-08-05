@@ -13,27 +13,27 @@ if not lspkind_status_ok then
   return
 end
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
-  mapping = cmp.mapping.preset.insert {
+  mapping = cmp.mapping.preset.insert({
     ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
     ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-c>"] = cmp.mapping {
+    ["<C-c>"] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
-    },
+    }),
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<Right>"] = cmp.mapping.confirm { select = true },
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+    ["<Right>"] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -43,7 +43,7 @@ cmp.setup {
         luasnip.expand_or_jump()
       elseif luasnip.expandable() then
         luasnip.expand()
-      -- elseif check_backspace() then
+        -- elseif check_backspace() then
         -- cmp.complete()
         -- fallback()
       else
@@ -65,12 +65,12 @@ cmp.setup {
       "i",
       "s",
     }),
-  },
+  }),
   formatting = {
     -- to change cmp menu appereance check: https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
     format = lspkind.cmp_format({
-      preset = 'codicons',
-      mode = 'symbol_text',
+      preset = "codicons",
+      mode = "symbol_text",
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
     }),
   },
@@ -99,5 +99,4 @@ cmp.setup {
   experimental = {
     ghost_text = true,
   },
-}
-
+})
