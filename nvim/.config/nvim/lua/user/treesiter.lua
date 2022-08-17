@@ -5,7 +5,7 @@ end
 -- local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
 -- ft_to_parser.motoko = "typescript"
 
-configs.setup {
+configs.setup({
   ensure_installed = "all", -- one of "all" or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   ignore_install = { "" }, -- List of parsers to ignore installing
@@ -20,10 +20,10 @@ configs.setup {
   incremental_selection = {
     enable = true,
     keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
+      init_selection = "<M-Up>",
+      node_incremental = "<M-Up>",
+      scope_incremental = "<M-S-Up>",
+      node_decremental = "<M-Down>",
     },
   },
   indent = { enable = true, disable = { "python", "css", "rust" } },
@@ -52,12 +52,12 @@ configs.setup {
       "#4e79a7",
       "#edc949",
       "#76b7b2",
-      "#e15759",
       "#59a14f",
       "#af7aa1",
+      "#e15759",
       -- "#ff9da7",
       -- "#9c755f",
       -- "#bab0ab",
     },
   },
-}
+})
