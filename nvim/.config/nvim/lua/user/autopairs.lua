@@ -5,7 +5,7 @@ end
 
 npairs.setup({
   -- Treesitter config
-    check_ts = true,
+  check_ts = true,
   ts_config = { -- it will not add pairs inside of the specified treesitter nodes
     lua = { "string", "source" },
     javascript = { "string", "template_string" },
