@@ -45,3 +45,5 @@ load-nvmrc
 
 #rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+zsh_add_file "lf_icons.zsh"
