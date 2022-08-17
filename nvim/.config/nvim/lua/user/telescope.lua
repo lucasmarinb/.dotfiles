@@ -17,5 +17,14 @@
 -- <M-q>: Send all selected items to quickfixlist
 
 require("telescope").setup({
-	defaults = { file_ignore_patterns = { "node_modules" } },
+  defaults = {
+    file_ignore_patterns = { "node_modules", ".git", ".next" },
+  },
+  pickers = {
+    find_files = { theme = "dropdown" },
+    buffers = { theme = "dropdown" },
+    live_grep = { theme = "dropdown" },
+  },
 })
+-- vim.api.nvim_create_augroup("User", {})
+vim.api.nvim_create_autocmd({ "User TelescopePreviewerLoaded" }, { command = "setlocal wrap" })
