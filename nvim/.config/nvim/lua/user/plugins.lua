@@ -98,6 +98,8 @@ return packer.startup(function(use)
   -- Uncategorized
   use("nvim-lua/plenary.nvim")
   use("nvim-lualine/lualine.nvim")
+  use("RRethy/vim-illuminate")
+  use("mg979/vim-visual-multi")
   use({
     "kylechui/nvim-surround",
     config = function()

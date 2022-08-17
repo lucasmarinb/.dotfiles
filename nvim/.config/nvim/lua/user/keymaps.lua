@@ -81,14 +81,14 @@ keymap("n", "[q", "<Cmd>:cprev<CR>", opts)
 keymap("n", "]q", "<Cmd>:cnext<CR>", opts)
 
 -- Harpoon
-keymap("n", "<leader>ma", "<Cmd>lua require(\"harpoon.mark\").add_file()<CR>", opts)
-keymap("n", "<leader>mf", "<Cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<CR>", opts)
-keymap("n", "[m", "<Cmd>lua require(\"harpoon.ui\").nav_prev()<CR>", opts)
-keymap("n", "]m", "<Cmd>lua require(\"harpoon.ui\").nav_next()<CR>", opts)
-keymap("n", "<leader>1", "<Cmd>lua require(\"harpoon.ui\").nav_file(1)<CR>", opts)
-keymap("n", "<leader>2", "<Cmd>lua require(\"harpoon.ui\").nav_file(2)<CR>", opts)
-keymap("n", "<leader>3", "<Cmd>lua require(\"harpoon.ui\").nav_file(3)<CR>", opts)
-keymap("n", "<leader>4", "<Cmd>lua require(\"harpoon.ui\").nav_file(4)<CR>", opts)
+keymap("n", "<leader>ma", '<Cmd>lua require("harpoon.mark").add_file()<CR>', opts)
+keymap("n", "<leader>mf", '<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
+keymap("n", "[m", '<Cmd>lua require("harpoon.ui").nav_prev()<CR>', opts)
+keymap("n", "]m", '<Cmd>lua require("harpoon.ui").nav_next()<CR>', opts)
+keymap("n", "<leader>1", '<Cmd>lua require("harpoon.ui").nav_file(1)<CR>', opts)
+keymap("n", "<leader>2", '<Cmd>lua require("harpoon.ui").nav_file(2)<CR>', opts)
+keymap("n", "<leader>3", '<Cmd>lua require("harpoon.ui").nav_file(3)<CR>', opts)
+keymap("n", "<leader>4", '<Cmd>lua require("harpoon.ui").nav_file(4)<CR>', opts)
 
 -- ===== Visual =====
 keymap("v", "p", '"_dP', opts) -- paste into null register to avoid to avoid messing other yanked elements
