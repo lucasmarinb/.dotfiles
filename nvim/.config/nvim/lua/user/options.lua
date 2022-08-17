@@ -21,6 +21,7 @@ local options = {
   splitright = true, -- new split appears right instead of left
   ignorecase = true, -- ignore case search by default
   smartcase = true, -- if search contains uppercase letter it turns into case sensitive search
+  timeoutlen = 2000, -- time in milliseconds to wait for a mapped sequence to complete.
 }
 
 for k, v in pairs(options) do
