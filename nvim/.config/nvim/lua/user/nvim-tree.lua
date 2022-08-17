@@ -42,7 +42,7 @@ nvim_tree.setup({
 	},
 	update_focused_file = {
 		enable = true,
-		update_cwd = true,
+		-- update_cwd = true,
 	},
 	sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
 	view = {
