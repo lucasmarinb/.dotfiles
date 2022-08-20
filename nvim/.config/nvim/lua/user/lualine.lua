@@ -1,6 +1,6 @@
 require("lualine").setup({
   options = {
-    theme = "dracula",
+    theme = "base16",
     section_separators = { left = "", right = "" },
     component_separators = { left = "", right = "" },
   },

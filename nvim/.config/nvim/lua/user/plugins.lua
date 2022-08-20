@@ -49,6 +49,7 @@ return packer.startup(function(use)
   use("ellisonleao/gruvbox.nvim")
   use("folke/tokyonight.nvim")
   use("Mofiqul/dracula.nvim")
+  use("JoosepAlviste/palenightfall.nvim")
 
   -- cmp plugins
   use("hrsh7th/nvim-cmp") -- The completion engine plugin
