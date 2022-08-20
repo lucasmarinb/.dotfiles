@@ -99,7 +99,6 @@ end
 
 local on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
-  require("illuminate").on_attach(client)
   -- enable format on save
   if client.supports_method("textDocument/formatting") then
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
