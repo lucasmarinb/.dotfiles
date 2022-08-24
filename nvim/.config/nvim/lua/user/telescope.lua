@@ -16,15 +16,39 @@
 -- <C-q>: Send all not filtered items to quickfixlist
 -- <M-q>: Send all selected items to quickfixlist
 
+-- ===== COMMENTS =====
+-- The plugin telescope-fzf-native.nvim was installed to allow spaces in a file search
+-- The plugin required to compile the fzf plugin, I had to do it manually by running make in the plugin folder
+
 require("telescope").setup({
   defaults = {
     file_ignore_patterns = { "node_modules", ".git", ".next" },
+    mappings = {
+      i = {
+        ["<C-Down>"] = require("telescope.actions").cycle_history_next,
+        ["<C-Up>"] = require("telescope.actions").cycle_history_prev,
+      },
+    },
   },
   pickers = {
     find_files = { theme = "dropdown" },
     buffers = { theme = "dropdown" },
     live_grep = { theme = "dropdown" },
   },
+  extensions = {
+    -- telescope-fzf-native.nvim config
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
+    },
+  },
 })
--- vim.api.nvim_create_augroup("User", {})
+-- vim.api.nvim_create_augroup("User", {}) -- nunca supe por qué falló esto, pero tenía que ver con el text wrap
+
+-- Enable text wrap in telescope preview
 vim.api.nvim_create_autocmd({ "User TelescopePreviewerLoaded" }, { command = "setlocal wrap" })
+
+-- telescope-fzf-native.nvim should be loaded somewhere after setup function:
+require("telescope").load_extension("fzf")
