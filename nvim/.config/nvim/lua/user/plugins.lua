@@ -97,6 +97,12 @@ return packer.startup(function(use)
   use("numToStr/Comment.nvim")
   use("JoosepAlviste/nvim-ts-context-commentstring")
 
+  -- Terminal
+  use({
+    "akinsho/toggleterm.nvim",
+    tag = "v2.*",
+  })
+
   -- Uncategorized
   use("nvim-lua/plenary.nvim")
   use("nvim-lualine/lualine.nvim")
