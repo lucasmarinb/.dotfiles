@@ -80,6 +80,7 @@ return packer.startup(function(use)
   -- Git
   use("TimUntersberger/neogit")
   use("lewis6991/gitsigns.nvim")
+  use("sindrets/diffview.nvim")
 
   -- NvimTree
   use("kyazdani42/nvim-web-devicons")

@@ -1,6 +1,7 @@
 -- :help options
 -- ===== NOTES =====
 -- - Appending \c to a search makes it case insensitive, and \C makes is sensitive.
+
 local options = {
   scrolloff = 8, -- is one of my fav
   number = true, -- set numbered lines
