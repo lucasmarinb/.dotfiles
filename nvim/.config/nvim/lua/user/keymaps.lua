@@ -15,6 +15,8 @@
 -- vip: Visually select inner paragraph
 -- gf: Go to file, is like gd (Go to definition) but doesn't show lsp error.
 -- To replace a Carriage Return you should use \r instead of \n, check: https://stackoverflow.com/a/71334/9344978
+-- vim.bo.filetype: gets the current buffer filetype
+-- To know the current buffer filetype you can execute :LSPInfo
 
 local opts = { noremap = true, silent = true }
 
@@ -55,12 +57,20 @@ function _G.toggleHls()
   end
 end
 
+function _G.toggleNeogit()
+  if vim.bo.filetype == "NeogitStatus" then
+    require("neogit").close()
+  else
+    return vim.cmd("Neogit")
+  end
+end
+
 -- ===== Plugins =====
 -- Nvim-tree
 keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", opts)
 
 --Neogit
-keymap("n", "<leader>gg", "<Cmd>Neogit<CR>", opts)
+keymap("n", "<leader>gg", "<Cmd>lua toggleNeogit()<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<Cmd>lua require('telescope.builtin').find_files({ hidden=true, no_ignore=true })<CR>", opts)
@@ -81,6 +91,9 @@ keymap("n", "<leader>4", '<Cmd>lua require("harpoon.ui").nav_file(4)<CR>', opts)
 -- Illuminate
 keymap("n", "]r", "<Cmd>lua require('illuminate').goto_next_reference()<Cr>", { noremap = true })
 keymap("n", "[r", "<Cmd>lua require('illuminate').goto_prev_reference()<Cr>", { noremap = true })
+
+-- Sessions
+keymap("n", "<leader>fs", "<Cmd>lua require('session-lens').search_session()<CR>", opts)
 
 -- ===== Utilities =====
 -- Clipboard
