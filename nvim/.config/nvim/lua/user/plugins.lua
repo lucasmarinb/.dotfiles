@@ -73,6 +73,7 @@ return packer.startup(function(use)
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("p00f/nvim-ts-rainbow")
   use("windwp/nvim-autopairs")
+  use("nvim-treesitter/nvim-treesitter-context")
 
   -- snippets
   use("L3MON4D3/LuaSnip") --snippet engine
