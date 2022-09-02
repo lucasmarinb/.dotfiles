@@ -22,7 +22,7 @@
 
 require("telescope").setup({
   defaults = {
-    file_ignore_patterns = { "node_modules",".git/",  ".next/" },
+    file_ignore_patterns = { "node_modules", ".git/", ".next/" },
     mappings = {
       i = {
         ["<C-Down>"] = require("telescope.actions").cycle_history_next,
