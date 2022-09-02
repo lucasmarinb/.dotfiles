@@ -1,6 +1,5 @@
 require("lualine").setup({
   options = {
-    theme = "base16",
     section_separators = { left = "", right = "" },
     component_separators = { left = "", right = "" },
   },
@@ -51,12 +50,12 @@ require("lualine").setup({
   --   lualine_y = {},
   --   lualine_z = {},
   -- },
-  -- tabline = {
-  --   lualine_a = { "buffers" },
-  --   lualine_b = { "branch" },
-  --   lualine_c = { "filename" },
-  --   lualine_x = {},
-  --   lualine_y = {},
-  --   lualine_z = { "tabs" },
-  -- },
+  tabline = {
+    lualine_a = { "buffers" },
+    -- lualine_b = { "branch" },
+    -- lualine_c = { "filename" },
+    -- lualine_x = {},
+    -- lualine_y = {},
+    -- lualine_z = { "tabs" },
+  },
 })
