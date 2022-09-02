@@ -12,6 +12,9 @@
 -- <C-r><C-w>: In search mode, searches the word under the cursor
 -- <C-o>: Navigate to the previous item in the jumplist
 -- <C-i>: Navigate to the next item in the jumplist
+-- vip: Visually select inner paragraph
+-- gf: Go to file, is like gd (Go to definition) but doesn't show lsp error.
+-- To replace a Carriage Return you should use \r instead of \n, check: https://stackoverflow.com/a/71334/9344978
 
 local opts = { noremap = true, silent = true }
 
@@ -76,25 +79,31 @@ keymap("n", "<leader>3", '<Cmd>lua require("harpoon.ui").nav_file(3)<CR>', opts)
 keymap("n", "<leader>4", '<Cmd>lua require("harpoon.ui").nav_file(4)<CR>', opts)
 
 -- Illuminate
-keymap("n", "]r", '<Cmd>lua require"illuminate".next_reference{wrap=true}<Cr>', { noremap = true })
-keymap("n", "[r", '<Cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<Cr>', { noremap = true })
+keymap("n", "]r", "<Cmd>lua require('illuminate').goto_next_reference()<Cr>", { noremap = true })
+keymap("n", "[r", "<Cmd>lua require('illuminate').goto_prev_reference()<Cr>", { noremap = true })
 
 -- ===== Utilities =====
 -- Clipboard
-keymap("v", "p", '"_dP', opts) -- paste into null register to avoid to avoid messing other yanked elements
-
 keymap("n", "y", '"+y', opts)
-keymap("n", "Y", '"+Y', opts)
+keymap("n", "Y", '"+y$', opts) -- Y-default maps to y$, but this doesn't work with "+Y so we explicitly call y$
 keymap("n", "d", '"+d', opts)
 keymap("n", "D", '"+D', opts)
 
 keymap("v", "y", '"+y', opts)
-keymap("v", "Y", '"+Y', opts)
+keymap("v", "Y", '"+y$', opts)
+keymap("v", "d", '"+d', opts)
+keymap("v", "D", '"+D', opts)
 
-keymap("x", "y", '"+y', opts)
-keymap("x", "Y", '"+Y', opts)
+keymap("v", "<leader>y", "y", opts)
+keymap("v", "<leader>Y", "Y", opts)
+keymap("v", "<leader>d", "d", opts)
+keymap("v", "<leader>D", "D", opts)
+
+keymap("v", "p", '"_dP', opts) -- In visual mode, paste into null register to avoid messing other yanked elements
 
 -- Quickfix list
+-- It seems that there is no easy way to remove an item without a plugin
+-- The plugin [nvim-bfq](https://github.com/kevinhwang91/nvim-bqf) allows you to preview changes, highlight matches and use them with s//<replace_text>
 keymap("n", "<leader>qq", "<Cmd>:cclose<CR>", opts)
 keymap("n", "<leader>qo", "<Cmd>:copen<CR>", opts)
 keymap("n", "[q", "<Cmd>:cprev<CR>", opts)
@@ -125,5 +134,13 @@ keymap("n", "]<CR>", "o<Esc>", opts)
 -- Highlight
 keymap("n", "<C-l>", "<Cmd>lua toggleHls()<CR>", opts)
 
+-- Search and replace
+-- TODO: Compare replace https://stackoverflow.com/a/46639908/9344978
+keymap("n", "<leader>sr", ":%s/<C-r><C-w>/", opts) -- Search and replace
+keymap("n", "<leader>ss", "/<C-r><C-w><CR>", opts) -- Select and search text under cursor
+keymap("v", "<leader>sr", '"hy:%s/<C-r>h//gc<left><left><left>', opts) -- Search and replace in visual mode, uses the "h register
+keymap("v", "<leader>ss", '"hy/<C-r>h<CR>', opts) -- Select and search text under cursor
+
 -- Misc
 keymap("n", "<C-z>", "<nop>", opts) -- avoid accidentally shutting down nvim
+keymap("n", "<leader>,", ",", opts)
