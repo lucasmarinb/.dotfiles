@@ -82,6 +82,7 @@ return packer.startup(function(use)
   use("TimUntersberger/neogit")
   use("lewis6991/gitsigns.nvim")
   use("sindrets/diffview.nvim")
+  use("akinsho/git-conflict.nvim")
 
   -- NvimTree
   use("kyazdani42/nvim-web-devicons")
@@ -103,6 +104,10 @@ return packer.startup(function(use)
     "akinsho/toggleterm.nvim",
     tag = "v2.*",
   })
+
+  -- Sessions
+  --[[ use("rmagatti/auto-session")
+  use("rmagatti/session-lens") ]]
 
   -- Uncategorized
   use("nvim-lua/plenary.nvim")

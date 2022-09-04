@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
+  ["git-conflict.nvim"] = {
+    loaded = true,
+    path = "/home/lucas/.local/share/nvim/site/pack/packer/start/git-conflict.nvim",
+    url = "https://github.com/akinsho/git-conflict.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
