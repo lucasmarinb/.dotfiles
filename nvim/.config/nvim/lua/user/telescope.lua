@@ -15,6 +15,8 @@
 -- <C-d>: Scroll down preview
 -- <C-q>: Send all not filtered items to quickfixlist
 -- <M-q>: Send all selected items to quickfixlist
+-- <C-Down>: Cycle history next
+-- <C-Up>: Cycle history prev
 
 -- ===== COMMENTS =====
 -- The plugin telescope-fzf-native.nvim was installed to allow spaces in a file search
