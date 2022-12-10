@@ -280,6 +280,11 @@ _G.packer_plugins = {
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/promise-async",
     url = "https://github.com/kevinhwang91/promise-async"
   },
+  rainbow_csv = {
+    loaded = true,
+    path = "/home/lucas/.local/share/nvim/site/pack/packer/start/rainbow_csv",
+    url = "https://github.com/mechatroner/rainbow_csv"
+  },
   sonokai = {
     loaded = true,
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/sonokai",
