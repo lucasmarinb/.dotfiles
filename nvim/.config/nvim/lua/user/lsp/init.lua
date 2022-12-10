@@ -3,101 +3,85 @@
 
 local lspconfig_status_ok, _ = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
-	return
+  return
 end
 
-local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-	return
+  return
+end
+
+local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if not status_ok then
+  return
 end
 
 -- ===== DIAGNOSTICS =====
 local signs = {
-	{ name = "DiagnosticSignError", text = "" },
-	{ name = "DiagnosticSignWarn", text = "" },
-	{ name = "DiagnosticSignHint", text = "" },
-	{ name = "DiagnosticSignInfo", text = "" },
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn", text = "" },
+  { name = "DiagnosticSignHint", text = "" },
+  { name = "DiagnosticSignInfo", text = "" },
 }
 
 for _, sign in ipairs(signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
 local config = {
-	-- disable virtual text
-	virtual_text = false,
-	-- show signs
-	signs = {
-		active = signs,
-	},
-	update_in_insert = true,
-	underline = true,
-	severity_sort = true,
-	float = {
-		focusable = true,
-		style = "minimal",
-		border = "rounded",
-		source = "always",
-		header = "",
-		prefix = "",
-		-- width = 40,
-	},
+  -- disable virtual text
+  virtual_text = false,
+  -- show signs
+  signs = {
+    active = signs,
+  },
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = true,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+    -- width = 40,
+  },
 }
 
 vim.diagnostic.config(config)
 
 -- ===== HANDLERS =====
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "rounded",
-	width = 60,
-	-- height = 30,
+  border = "rounded",
+  width = 60,
+  -- height = 30,
 })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-	border = "rounded",
-	width = 60,
-	-- height = 30,
+  border = "rounded",
+  width = 60,
+  -- height = 30,
 })
 
-
--- ===== LSP INSTALLER =====
+-- ===== MASON: LSP INSTALLER =====
 local servers = {
-	"cssls",
-	"cssmodules_ls",
-	"emmet_ls",
-	"html",
-	"jsonls",
-	"sumneko_lua",
-	"tsserver",
-	"pyright",
-	"yamlls",
-	"bashls",
+  "cssls",
+  "cssmodules_ls",
+  "emmet_ls",
+  "html",
+  "jsonls",
+  "sumneko_lua",
+  "tsserver",
+  "pyright",
+  "yamlls",
+  "bashls",
 }
 
-local server_names = {}
-for _, name in ipairs(servers) do
-	table.insert(server_names, name)
-end
-
-local settings = {
-	ensure_installed = server_names,
-	ui = {
-		icons = {},
-		keymaps = {
-			toggle_server_expand = "<CR>",
-			install_server = "i",
-			update_server = "u",
-			check_server_version = "c",
-			update_all_servers = "U",
-			check_outdated_servers = "C",
-			uninstall_server = "X",
-		},
-	},
-
-	log_level = vim.log.levels.INFO,
-}
-
-lsp_installer.setup(settings)
+mason.setup()
+mason_lspconfig.setup({
+  ensure_installed = servers,
+})
 
 -- ===== LANGUAGE SERVERS =====
 local on_attach = require("user.lsp.handlers").on_attach
@@ -105,7 +89,7 @@ local capabilities = require("user.lsp.handlers").capabilities
 
 local default_settings = require("user.lsp.settings._template")
 local function default_setup(server_name)
-	default_settings.setup(server_name, on_attach, capabilities)
+  default_settings.setup(server_name, on_attach, capabilities)
 end
 
 -- local servers = {

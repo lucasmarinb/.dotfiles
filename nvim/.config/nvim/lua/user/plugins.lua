@@ -63,7 +63,7 @@ return packer.startup(function(use)
 
   -- LSP
   use("neovim/nvim-lspconfig") -- enable LSP (LSP is integrated in nvim, this just enables an easy way to config)
-  use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+  use({ "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" })
   use("b0o/SchemaStore.nvim") -- repo of document schemas like package.json
   use("onsails/lspkind.nvim")
   use("jose-elias-alvarez/null-ls.nvim")
