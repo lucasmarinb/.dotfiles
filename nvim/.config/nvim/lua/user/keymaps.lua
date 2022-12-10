@@ -79,6 +79,10 @@ keymap("n", "<leader>fg", "<Cmd>lua require('telescope.builtin').live_grep({ hid
 keymap("n", "<leader>fb", "<Cmd>lua require('telescope.builtin').buffers({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fd", "<Cmd>lua require('telescope.builtin').diagnostics()<CR>", opts)
 
+-- ufo: code foding
+keymap("n", "zR", '<Cmd>lua require("ufo").openAllFolds()<CR>', opts)
+keymap("n", "zM", '<Cmd>lua require("ufo").closeAllFolds()<CR>', opts)
+
 -- Harpoon
 keymap("n", "<leader>ma", '<Cmd>lua require("harpoon.mark").add_file()<CR>', opts)
 keymap("n", "<leader>mf", '<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)

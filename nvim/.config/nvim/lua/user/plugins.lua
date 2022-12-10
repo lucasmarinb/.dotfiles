@@ -105,6 +105,9 @@ return packer.startup(function(use)
     tag = "v2.*",
   })
 
+  -- Folding
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+
   -- Sessions
   --[[ use("rmagatti/auto-session")
   use("rmagatti/session-lens") ]]
