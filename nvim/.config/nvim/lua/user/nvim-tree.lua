@@ -26,31 +26,32 @@
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-	return
+  return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
-	return
+  return
 end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
-	filters = {
-		-- custom = { ".git" },
-	},
-	update_focused_file = {
-		enable = true,
-		-- update_cwd = true,
-	},
-	sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
-	view = {
-		mappings = {
-			list = {
-				{ key = "h", cb = tree_cb("close_node") }, -- collapse folder
-				{ key = "v", cb = tree_cb("vsplit") }, -- open in new verticcal split
-			},
-		},
-	},
+  filters = {
+    -- custom = { ".git" },
+  },
+  update_focused_file = {
+    enable = true,
+    -- update_cwd = true,
+  },
+  sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
+  select_prompts = true, -- necessary when using a UI prompt decorator such as dressing.nvim
+  view = {
+    mappings = {
+      list = {
+        { key = "h", cb = tree_cb("close_node") }, -- collapse folder
+        { key = "v", cb = tree_cb("vsplit") }, -- open in new verticcal split
+      },
+    },
+  },
 })
