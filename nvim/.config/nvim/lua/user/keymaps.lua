@@ -17,6 +17,9 @@
 -- To replace a Carriage Return you should use \r instead of \n, check: https://stackoverflow.com/a/71334/9344978
 -- vim.bo.filetype: gets the current buffer filetype
 -- To know the current buffer filetype you can execute :LSPInfo
+-- <C-a>: Increment number under cursor
+-- <C-x>: Decrement number under cursor
+-- gx: Go to link under cursor
 
 local opts = { noremap = true, silent = true }
 
@@ -158,9 +161,17 @@ keymap("n", "]<CR>", "o<Esc>", opts)
 keymap("n", "<C-l>", "<Cmd>lua toggleHls()<CR>", opts)
 
 -- Search and replace
+-- gn: visually selects the next search match
 -- TODO: Compare replace https://stackoverflow.com/a/46639908/9344978
+-- function _G.highlightAndReplace()
+--   vim.api.nvim_command('execute "normal! ' .. '"hy' .. '/<C-r>h<CR>"')
+--   local replace = vim.fn.input("Replace with: ", "", "file")
+--   vim.api.nvim_command('execute "normal! c' .. replace .. '"')
+-- end
 keymap("n", "<leader>sr", ":%s/<C-r><C-w>/", opts) -- Search and replace
 keymap("n", "<leader>ss", "/<C-r><C-w><CR>", opts) -- Select and search text under cursor
+-- keymap("v", "<leader>sa", "<Cmd>lua highlightAndReplace()<CR>", opts) -- Highlight visually selected word and prompts for change
+keymap("n", "<leader>.", 'gn"hy:s/<C-r>h/<C-r>./<CR>', opts) -- Repeats last command in the next ocurrence of the visually selected text
 keymap("v", "<leader>sr", '"hy:%s/<C-r>h//gc<left><left><left>', opts) -- Search and replace in visual mode, uses the "h register
 keymap("v", "<leader>ss", '"hy/<C-r>h<CR>', opts) -- Select and search text under cursor
 
