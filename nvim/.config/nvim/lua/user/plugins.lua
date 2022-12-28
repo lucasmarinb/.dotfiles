@@ -105,6 +105,9 @@ return packer.startup(function(use)
     tag = "v2.*",
   })
 
+  -- Buffers
+  use("johann2357/nvim-smartbufs")
+
   -- Folding
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 

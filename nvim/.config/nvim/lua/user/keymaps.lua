@@ -100,6 +100,11 @@ keymap("n", "[r", "<Cmd>lua require('illuminate').goto_prev_reference()<Cr>", { 
 -- Sessions
 keymap("n", "<leader>fs", "<Cmd>lua require('session-lens').search_session()<CR>", opts)
 
+-- Smart Buffers
+keymap("n", "]b", '<Cmd>lua require("nvim-smartbufs").goto_next_buffer()<CR>', opts)
+keymap("n", "[b", '<Cmd>lua require("nvim-smartbufs").goto_prev_buffer()<CR>', opts)
+keymap("n", "<leader>bq", '<Cmd>lua require("nvim-smartbufs").close_current_buffer()<CR>', opts)
+
 -- ===== Utilities =====
 -- Clipboard
 keymap("n", "y", '"+y', opts)
