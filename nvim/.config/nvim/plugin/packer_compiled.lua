@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["legendary.nvim"] = {
+    loaded = true,
+    path = "/home/lucas/.local/share/nvim/site/pack/packer/start/legendary.nvim",
+    url = "https://github.com/mrjones2014/legendary.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -289,6 +294,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lucas/.local/share/nvim/site/pack/packer/start/sonokai",
     url = "https://github.com/sainnhe/sonokai"
+  },
+  ["sqlite.lua"] = {
+    loaded = true,
+    path = "/home/lucas/.local/share/nvim/site/pack/packer/start/sqlite.lua",
+    url = "https://github.com/kkharji/sqlite.lua"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,

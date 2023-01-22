@@ -108,6 +108,9 @@ keymap("n", "]b", '<Cmd>lua require("nvim-smartbufs").goto_next_buffer()<CR>', o
 keymap("n", "[b", '<Cmd>lua require("nvim-smartbufs").goto_prev_buffer()<CR>', opts)
 keymap("n", "<leader>bq", '<Cmd>lua require("nvim-smartbufs").close_current_buffer()<CR>', opts)
 
+-- Legendary
+keymap("n", "<M-,>", "<Cmd>Legendary<CR>", opts)
+
 -- ===== Utilities =====
 -- Clipboard
 keymap("n", "y", '"+y', opts)

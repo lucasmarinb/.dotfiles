@@ -131,6 +131,12 @@ return packer.startup(function(use)
   })
   use("ThePrimeagen/harpoon")
   use({ "stevearc/dressing.nvim" })
+  use({
+    "mrjones2014/legendary.nvim",
+    tag = "v2.6.0",
+    -- sqlite is only needed if you want to use frecency sorting
+    requires = "kkharji/sqlite.lua",
+  })
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
