@@ -79,7 +79,11 @@ return packer.startup(function(use)
   use("L3MON4D3/LuaSnip") --snippet engine
 
   -- Git
-  use("TimUntersberger/neogit")
+  -- Neogit commit working: 009ac00e5235349e0e8cead30d1ee032b712486f
+  -- Issue: https://github.com/TimUntersberger/neogit/issues/410
+  -- use({ "TimUntersberger/neogit", commit = "009ac00e5235349e0e8cead30d1ee032b712486f" })
+  -- Last working commit: 30265e7a1bdf59361b37e293cdcecc167851c602
+  use({ "TimUntersberger/neogit" })
   use("lewis6991/gitsigns.nvim")
   use("sindrets/diffview.nvim")
   use("akinsho/git-conflict.nvim")
