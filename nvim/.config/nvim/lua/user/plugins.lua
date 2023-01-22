@@ -120,7 +120,7 @@ return packer.startup(function(use)
   use("nvim-lualine/lualine.nvim")
   use("RRethy/vim-illuminate")
   use("mg979/vim-visual-multi")
-  use('mechatroner/rainbow_csv')
+  use("mechatroner/rainbow_csv")
   use({
     "kylechui/nvim-surround",
     config = function()
