@@ -79,6 +79,8 @@ keymap("n", "<leader>gg", "<Cmd>lua toggleNeogit()<CR>", opts)
 keymap("n", "<leader>ff", "<Cmd>lua require('telescope.builtin').find_files({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fr", "<Cmd>lua require('telescope.builtin').resume({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fg", "<Cmd>lua require('telescope.builtin').live_grep({ hidden=true, no_ignore=true })<CR>", opts)
+keymap("n", "<leader>fc", "<Cmd>lua require('telescope.builtin').git_status({ hidden=true, no_ignore=true })<CR>", opts)
+keymap("n", "<leader>fh", "<Cmd>lua require('telescope.builtin').help_tags({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fb", "<Cmd>lua require('telescope.builtin').buffers({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fd", "<Cmd>lua require('telescope.builtin').diagnostics()<CR>", opts)
 

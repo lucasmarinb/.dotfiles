@@ -33,9 +33,19 @@ require("telescope").setup({
     },
   },
   pickers = {
-    find_files = { theme = "dropdown" },
+    find_files = {
+      sorting_strategy = "ascending",
+      layout_strategy = "vertical",
+      layout_config = { width = 0.5, prompt_position = "top" },
+    },
     buffers = { theme = "dropdown" },
     live_grep = { theme = "dropdown" },
+    help_tags = { theme = "dropdown" },
+    git_status = {
+      initial_mode = "normal",
+      sorting_strategy = "ascending",
+      layout_config = { prompt_position = "top" },
+    },
   },
   extensions = {
     -- telescope-fzf-native.nvim config
