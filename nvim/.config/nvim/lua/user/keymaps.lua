@@ -82,6 +82,12 @@ keymap("n", "<leader>fg", "<Cmd>lua require('telescope.builtin').live_grep({ hid
 keymap("n", "<leader>fc", "<Cmd>lua require('telescope.builtin').git_status({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fh", "<Cmd>lua require('telescope.builtin').help_tags({ hidden=true, no_ignore=true })<CR>", opts)
 keymap("n", "<leader>fb", "<Cmd>lua require('telescope.builtin').buffers({ hidden=true, no_ignore=true })<CR>", opts)
+keymap(
+  "n",
+  "<leader>fp",
+  "<Cmd>lua require('telescope').extensions.project.project({ hidden=true, no_ignore=true, display_type = 'full' })<CR>",
+  opts
+)
 keymap("n", "<leader>fd", "<Cmd>lua require('telescope.builtin').diagnostics()<CR>", opts)
 
 -- ufo: code foding

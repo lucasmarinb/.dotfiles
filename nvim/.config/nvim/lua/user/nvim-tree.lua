@@ -44,7 +44,7 @@ nvim_tree.setup({
     enable = true,
     -- update_cwd = true,
   },
-  -- sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
+  sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
   select_prompts = true, -- necessary when using a UI prompt decorator such as dressing.nvim
   view = {
     mappings = {

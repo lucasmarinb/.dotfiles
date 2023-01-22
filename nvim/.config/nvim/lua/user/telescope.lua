@@ -22,7 +22,11 @@
 -- The plugin telescope-fzf-native.nvim was installed to allow spaces in a file search
 -- The plugin required to compile the fzf plugin, I had to do it manually by running make in the plugin folder
 
-require("telescope").setup({
+local telescope = require("telescope")
+
+telescope.load_extension("project")
+
+telescope.setup({
   defaults = {
     file_ignore_patterns = { "node_modules", ".git/", ".next/" },
     mappings = {
@@ -46,6 +50,11 @@ require("telescope").setup({
       sorting_strategy = "ascending",
       layout_config = { prompt_position = "top" },
     },
+    project = {
+      initial_mode = "normal",
+      sorting_strategy = "ascending",
+      layout_config = { width = 0.5, prompt_position = "top" },
+    },
   },
   extensions = {
     -- telescope-fzf-native.nvim config
@@ -54,6 +63,9 @@ require("telescope").setup({
       override_generic_sorter = true, -- override the generic sorter
       override_file_sorter = true, -- override the file sorter
       case_mode = "smart_case", -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
+    },
+    project = {
+      sync_with_nvim_tree = true, -- default false
     },
   },
 })
