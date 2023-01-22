@@ -2,6 +2,7 @@
 -- <C-w>w: Focus previw window
 
 require("gitsigns").setup({
+  current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns
 
