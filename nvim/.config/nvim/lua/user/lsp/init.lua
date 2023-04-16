@@ -76,6 +76,8 @@ local servers = {
   "pyright",
   "yamlls",
   "bashls",
+  "marksman",
+  "ltex",
 }
 
 mason.setup()
@@ -114,4 +116,6 @@ require("user.lsp.settings.sumneko_lua").setup(on_attach, capabilities)
 require("user.lsp.settings.tsserver").setup(on_attach, capabilities)
 require("user.lsp.settings.pyright").setup(on_attach, capabilities)
 require("user.lsp.settings.yamlls").setup(on_attach, capabilities)
+require("user.lsp.settings.marksman").setup(on_attach, capabilities)
+require("user.lsp.settings.ltex").setup(on_attach, capabilities)
 default_setup("bashls")
