@@ -122,8 +122,10 @@ return packer.startup(function(use)
   use("rmagatti/session-lens") ]]
 
   -- Uncategorized
+  use("glepnir/dashboard-nvim")
   use("nvim-lua/plenary.nvim")
   use("nvim-lualine/lualine.nvim")
+  use("akinsho/bufferline.nvim")
   use("RRethy/vim-illuminate")
   use("mg979/vim-visual-multi")
   use("mechatroner/rainbow_csv")
