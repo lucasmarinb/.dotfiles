@@ -71,7 +71,7 @@ local servers = {
   "emmet_ls",
   "html",
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   "tsserver",
   "pyright",
   "yamlls",
@@ -100,7 +100,7 @@ end
 -- emmet_ls = require("user.lsp.settings.emmet_ls").setup(on_attach, capabilities),
 -- html = default_setup("html"),
 -- jsonls = require("user.lsp.settings.jsonls").setup(on_attach, capabilities),
--- sumneko_lua = require("user.lsp.settings.sumneko_lua").setup(on_attach, capabilities),
+-- lua_ls = require("user.lsp.settings.lua_ls").setup(on_attach, capabilities),
 -- tsserver = require("user.lsp.settings.tsserver").setup(on_attach, capabilities),
 -- pyright = require("user.lsp.settings.pyright").setup(on_attach, capabilities),
 -- yamlls = require("user.lsp.settings.yamlls").setup(on_attach, capabilities),
@@ -112,7 +112,7 @@ require("user.lsp.settings.cssmodules_ls").setup(on_attach, capabilities)
 require("user.lsp.settings.emmet_ls").setup(on_attach, capabilities)
 default_setup("html")
 require("user.lsp.settings.jsonls").setup(on_attach, capabilities)
-require("user.lsp.settings.sumneko_lua").setup(on_attach, capabilities)
+require("user.lsp.settings.lua_ls").setup(on_attach, capabilities)
 require("user.lsp.settings.tsserver").setup(on_attach, capabilities)
 require("user.lsp.settings.pyright").setup(on_attach, capabilities)
 require("user.lsp.settings.yamlls").setup(on_attach, capabilities)
