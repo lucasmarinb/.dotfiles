@@ -101,8 +101,9 @@ return packer.startup(function(use)
   use("NvChad/nvim-colorizer.lua")
 
   -- Comments
-  use("numToStr/Comment.nvim")
-  use("JoosepAlviste/nvim-ts-context-commentstring")
+  -- Testing jsx branch = https://github.com/numToStr/Comment.nvim/pull/133
+  use({ "numToStr/Comment.nvim", branch = "jsx" })
+  -- use("JoosepAlviste/nvim-ts-context-commentstring")
 
   -- Terminal
   use({
