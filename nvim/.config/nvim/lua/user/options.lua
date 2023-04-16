@@ -29,6 +29,10 @@ local options = {
   foldlevel = 99,
   foldlevelstart = 99,
   foldenable = true,
+  colorcolumn = "80",
+  -- wrap text at the end of the screen without inserting a linbreak
+  wrap = true,
+  linebreak = true,
 }
 
 for k, v in pairs(options) do
