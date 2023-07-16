@@ -29,12 +29,17 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
+local function on_attach(bufnr)
+  local api = require("nvim-tree.api")
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+end
 
 nvim_tree.setup({
   filters = {
@@ -46,12 +51,5 @@ nvim_tree.setup({
   },
   sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
   select_prompts = true, -- necessary when using a UI prompt decorator such as dressing.nvim
-  view = {
-    mappings = {
-      list = {
-        { key = "h", cb = tree_cb("close_node") }, -- collapse folder
-        { key = "v", cb = tree_cb("vsplit") }, -- open in new verticcal split
-      },
-    },
-  },
+  on_attach = on_attach,
 })
