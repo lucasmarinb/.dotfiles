@@ -32,32 +32,4 @@ configs.setup({
     enable = true,
     enable_autocmd = false,
   },
-  rainbow = {
-    enable = true,
-    disable = { "html" },
-    -- It allows up to 7 colors, put one more and break the plugin
-    colors = {
-      -- d3.schemePastel1
-      -- "#fbb4ae",
-      -- "#b3cde3",
-      -- "#ccebc5",
-      -- "#decbe4",
-      -- "#fed9a6",
-      -- "#ffffcc",
-      -- "#e5d8bd",
-      -- "#fddaec",
-      -- "#f2f2f2",
-      -- d3.schemeSet1
-      "#f28e2c",
-      "#4e79a7",
-      "#edc949",
-      "#76b7b2",
-      "#59a14f",
-      "#af7aa1",
-      "#e15759",
-      -- "#ff9da7",
-      -- "#9c755f",
-      -- "#bab0ab",
-    },
-  },
 })

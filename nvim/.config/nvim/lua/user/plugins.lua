@@ -71,7 +71,7 @@ return packer.startup(function(use)
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use("HiPhish/nvim-ts-rainbow2")
+  use("HiPhish/rainbow-delimiters.nvim")
   use("windwp/nvim-autopairs")
   use("nvim-treesitter/nvim-treesitter-context")
 
