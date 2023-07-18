@@ -96,6 +96,10 @@ return packer.startup(function(use)
   use("nvim-telescope/telescope.nvim")
   use("nvim-telescope/telescope-project.nvim")
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+  use({
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+  })
 
   -- Colors
   use("NvChad/nvim-colorizer.lua")

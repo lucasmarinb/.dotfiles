@@ -84,6 +84,12 @@ keymap("n", "<leader>fh", "<Cmd>lua require('telescope.builtin').help_tags({ hid
 keymap("n", "<leader>fb", "<Cmd>lua require('telescope.builtin').buffers({ hidden=true, no_ignore=true })<CR>", opts)
 keymap(
   "n",
+  "<leader>fe",
+  "<Cmd>lua require('telescope').extensions.file_browser.file_browser({ path='/home/lucas/', hidden=false })<CR>",
+  opts
+)
+keymap(
+  "n",
   "<leader>fp",
   "<Cmd>lua require('telescope').extensions.project.project({ hidden=true, no_ignore=true, display_type = 'full' })<CR>",
   opts
