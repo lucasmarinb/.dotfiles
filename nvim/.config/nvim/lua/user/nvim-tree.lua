@@ -39,17 +39,19 @@ local function on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+  vim.keymap.set("n", "<C-o>", api.node.run.system, opts("System Open"))
 end
 
 nvim_tree.setup({
   filters = {
     -- custom = { ".git" },
   },
+  prefer_startup_root = true,
   update_focused_file = {
     enable = true,
     -- update_cwd = true,
   },
-  sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
+  -- sync_root_with_cwd = true, -- updates the tree root directory on DirChanged event
   select_prompts = true, -- necessary when using a UI prompt decorator such as dressing.nvim
   on_attach = on_attach,
 })
