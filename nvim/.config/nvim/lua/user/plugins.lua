@@ -67,7 +67,11 @@ return packer.startup(function(use)
   use("b0o/SchemaStore.nvim") -- repo of document schemas like package.json
   use("onsails/lspkind.nvim")
   use("jose-elias-alvarez/null-ls.nvim")
-  use("jose-elias-alvarez/typescript.nvim")
+  -- use("jose-elias-alvarez/typescript.nvim")
+  use({
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  })
 
   -- Treesitter
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
