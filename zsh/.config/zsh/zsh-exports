@@ -5,8 +5,9 @@ eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"
 
 # Rails
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
